@@ -1,5 +1,10 @@
+"use client";
 import Login from "./Login/page";
+import { selectUser } from "./GlobalState/Features/userSlice";
+import { useSelector } from "react-redux";
 export default function Home() {
+  const user = useSelector(selectUser);
+  console.log(user);
   return (
     <main className="flex w-full h-screen justify-center">
       <div className="flex flex-col md:w-3/5 w-4/5 md:h-3/6 justify-center items-center">
@@ -7,7 +12,7 @@ export default function Home() {
           <h1 className="md:text-4xl text-3xl leading-tight mb-6 text-center">
             Web Üzerinde Hızlı Not Tut!
           </h1>
-          <h2 className="md:text-2xl text-2xl leading-tight text-center mb-6">
+          <h2 className="md:text-2xl text-2xl leading-tight text-center mb-6 text-slate-800">
             Kendi Özel Alanına Eriş!
           </h2>
           <Login />
